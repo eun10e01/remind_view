@@ -1,4 +1,4 @@
-package Service;
+package remindview.service;
 
 public class NotificationService {
 

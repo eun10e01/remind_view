@@ -1,8 +1,8 @@
-package Repository;
+package remindview.repository;
 
 import java.util.List;
 
-import Domain.Notification;
+import remindview.domain.Notification;
 
 public interface NotificationRepository {
 	void notify(Notification notification);

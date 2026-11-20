@@ -1,8 +1,8 @@
-package Repository;
+package remindview.repository;
 
 import java.util.List;
 
-import Domain.Follow;
+import remindview.domain.Follow;
 
 public interface FollowRepository {
 	void following(Follow follow);

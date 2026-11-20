@@ -1,4 +1,4 @@
-package Domain;
+package remindview.domain;
 
 public class Notification {
 	int notificationId;

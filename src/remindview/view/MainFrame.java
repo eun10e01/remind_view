@@ -26,7 +26,7 @@ public class MainFrame extends JFrame {
         screenPanel = new JPanel(cardLayout);
 
         // 네가 보내준 컴포넌트 배치를 담을 수 있는 크기
-        screenPanel.setPreferredSize(new Dimension(330, 310));
+        screenPanel.setPreferredSize(new Dimension(700,550));
 
         // 3. 이미 디자인한 패널 생성
         loginPanel = new LoginPanel();

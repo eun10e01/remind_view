@@ -24,32 +24,32 @@ public class LoginPanel extends JPanel {
 		setLayout(null);
 		
 		JLabel titleLabel = new JLabel("리마인드 뷰");
-		titleLabel.setFont(new Font("굴림", Font.BOLD, 16));
-		titleLabel.setBounds(27, 10, 106, 28);
+		titleLabel.setFont(new Font("굴림", Font.BOLD, 28));
+		titleLabel.setBounds(170, 65, 360, 40);
 		add(titleLabel);
 		
 		JLabel partTitleLabel = new JLabel("YouTube 노트를 공유하고, 함께 기억해요.");
-		partTitleLabel.setFont(new Font("굴림", Font.PLAIN, 12));
-		partTitleLabel.setBounds(27, 40, 233, 14);
+		partTitleLabel.setFont(new Font("굴림", Font.PLAIN, 14));
+		partTitleLabel.setBounds(170, 112, 360, 24);
 		add(partTitleLabel);
 		
 		JLabel idLabel = new JLabel("아이디");
-		idLabel.setFont(new Font("굴림", Font.BOLD, 12));
-		idLabel.setBounds(27, 71, 52, 14);
+		idLabel.setFont(new Font("굴림", Font.BOLD, 14));
+		idLabel.setBounds(170, 165, 360, 22);
 		add(idLabel);
 		
 		idField = new JTextField();
-		idField.setBounds(27, 95, 233, 20);
+		idField.setBounds(170, 193, 360, 38);
 		add(idField);
 		idField.setColumns(10);
 		
 		JLabel passwordLabel = new JLabel("비밀번호");
-		passwordLabel.setFont(new Font("굴림", Font.BOLD, 12));
-		passwordLabel.setBounds(27, 129, 52, 14);
+		passwordLabel.setFont(new Font("굴림", Font.BOLD, 14));
+		passwordLabel.setBounds(170, 251, 360, 22);
 		add(passwordLabel);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(27, 153, 233, 20);
+		passwordField.setBounds(170, 279, 360, 38);
 		add(passwordField);
 		
 		JButton loginButton = new JButton("로그인");
@@ -64,12 +64,12 @@ public class LoginPanel extends JPanel {
 
 		loginButton.setBorderPainted(false);
 		loginButton.setFocusPainted(false);
-		loginButton.setBounds(27, 200, 94, 22);
+		loginButton.setBounds(170, 350, 170, 42);
 		add(loginButton);
 		
 		openSignupButton = new JButton("회원가입");
 		openSignupButton.setBackground(SystemColor.control);
-		openSignupButton.setBounds(138, 200, 94, 22);
+		openSignupButton.setBounds(360, 350, 170, 42);
 		add(openSignupButton);
 
 	}

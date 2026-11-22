@@ -2,6 +2,8 @@ package remindview.view;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
@@ -11,13 +13,14 @@ import java.awt.SystemColor;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class SignupPanel extends JPanel {
+public class SignupPanel extends JPanel implements SignupView{
 
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
+	private JTextField idField;
 	private JPasswordField passwordField;
 	private JTextField nicknameField;
 	private JButton backToLoginButton;
+	private JButton registerButton;
 	
 	/**
 	 * Create the panel.
@@ -40,10 +43,10 @@ public class SignupPanel extends JPanel {
 		idLabel.setBounds(170, 130, 360, 22);
 		add(idLabel);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(170, 158, 360, 38);
-		add(textField);
+		idField = new JTextField();
+		idField.setColumns(10);
+		idField.setBounds(170, 158, 360, 38);
+		add(idField);
 		
 		JLabel passwordLabel = new JLabel("비밀번호");
 		passwordLabel.setFont(new Font("굴림", Font.BOLD, 14));
@@ -54,11 +57,7 @@ public class SignupPanel extends JPanel {
 		passwordField.setBounds(170, 239, 360, 38);
 		add(passwordField);
 		
-		JButton registerButton = new JButton("가입하기");
-		registerButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		registerButton = new JButton("가입하기");
 		registerButton.setOpaque(true);
 		registerButton.setForeground(Color.WHITE);
 		registerButton.setFocusPainted(false);
@@ -87,5 +86,45 @@ public class SignupPanel extends JPanel {
 	
 	public JButton getBackToLoginButton() {
 	    return backToLoginButton;
+	}
+	
+	@Override
+	public String getLoginId() {
+	    return idField.getText();
+	}
+
+	@Override
+	public char[] getPassword() {
+	    return passwordField.getPassword();
+	}
+
+	@Override
+	public String getNickname() {
+	    return nicknameField.getText();
+	}
+
+	@Override
+	public void setSignupAction(Runnable action) {
+	    registerButton.addActionListener(e -> action.run());
+	}
+
+	@Override
+	public void showMessage(String message) {
+	    JOptionPane.showMessageDialog(
+	        this,
+	        message,
+	        "안내",
+	        JOptionPane.INFORMATION_MESSAGE
+	    );
+	}
+
+	@Override
+	public void showError(String message) {
+	    JOptionPane.showMessageDialog(
+	        this,
+	        message,
+	        "오류",
+	        JOptionPane.ERROR_MESSAGE
+	    );
 	}
 }

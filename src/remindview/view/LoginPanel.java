@@ -1,6 +1,7 @@
 package remindview.view;
 
 import javax.swing.JPanel;
+import javax.swing.JOptionPane;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
@@ -11,12 +12,13 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.SystemColor;
 
-public class LoginPanel extends JPanel {
+public class LoginPanel extends JPanel implements LoginView {
 
 	private static final long serialVersionUID = 1L;
 	private JTextField idField;
 	private JPasswordField passwordField;
 	private JButton openSignupButton;
+	private JButton loginButton;
 	/**
 	 * Create the panel.
 	 */
@@ -52,7 +54,7 @@ public class LoginPanel extends JPanel {
 		passwordField.setBounds(170, 279, 360, 38);
 		add(passwordField);
 		
-		JButton loginButton = new JButton("로그인");
+		loginButton = new JButton("로그인");
 		// 기본 테마 대신 단순한 버튼 모양을 사용
 		loginButton.setUI(new javax.swing.plaf.basic.BasicButtonUI());
 
@@ -76,5 +78,40 @@ public class LoginPanel extends JPanel {
 	
 	public JButton getOpenSignupButton() {
 	    return openSignupButton;
+	}
+
+	@Override
+	public String getLoginId() {
+	    return idField.getText();
+	}
+
+	@Override
+	public char[] getPassword() {
+	    return passwordField.getPassword();
+	}
+
+	@Override
+	public void setLoginAction(Runnable action) {
+	    loginButton.addActionListener(e -> action.run());
+	}
+
+	@Override
+	public void showMessage(String message) {
+	    JOptionPane.showMessageDialog(
+	        this,
+	        message,
+	        "안내",
+	        JOptionPane.INFORMATION_MESSAGE
+	    );
+	}
+
+	@Override
+	public void showError(String message) {
+	    JOptionPane.showMessageDialog(
+	        this,
+	        message,
+	        "오류",
+	        JOptionPane.ERROR_MESSAGE
+	    );
 	}
 }

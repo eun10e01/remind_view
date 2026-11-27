@@ -56,7 +56,7 @@ public class RecordService {
 		ContentRecord record = recordRepository.findById(recordId).orElseThrow(() -> new ServiceException("삭제할 기록이 존재하지 않습니다."));
 		
 		if(!record.isOwned(loginUserId)) {
-			throw new ServiceException("본인이 작성한 기록만 수정할 수 있습니다.");
+			throw new ServiceException("본인이 작성한 기록만 삭제할 수 있습니다.");
 		}
 		
 		commentRepository.deleteByRecordId(recordId);

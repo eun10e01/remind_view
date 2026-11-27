@@ -37,6 +37,11 @@ public class Comment implements Serializable{
 		this.content = newContent;
 	}
 	
+	//작성자 본인 여부 확인
+	public boolean isOwned(long requestUserId) {
+		return this.userId == requestUserId;
+	}
+	
 	//유효성 검증
 	private void validate(String content) {
 		if(content == null || content.isBlank()) {

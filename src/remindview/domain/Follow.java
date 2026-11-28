@@ -1,8 +1,8 @@
 package remindview.domain;
 
 public class Follow {
-	long followerId; //long으로 타입변경
-	long followingId;
+	private long followerId; //long으로 타입변경
+	private long followingId;
 	
 	public Follow(long followerId, long followingId) {
 		this.followerId = followerId;
@@ -17,4 +17,5 @@ public class Follow {
 	public long getFollowingId() {
 		return followingId;
 	}
+
 }

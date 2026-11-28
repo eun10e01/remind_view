@@ -1,13 +1,14 @@
 package remindview.domain;
 
 public class Notification {
-	long notificationId; //long으로 타입 변경
-	long receiverId;
-	long senderId;
-	long postId;
-	String message;
-	boolean isRead;
-	void markasRead() {};
+
+	private long notificationId; //long으로 타입 변경
+	private long receiverId;
+	private long senderId;
+	private long postId;
+	private String message;
+	private boolean isRead;
+	private void markasRead() {};
 	
 	//알림 생성할 때 사용
 	public Notification(long notificationId, long receiverId, long senderId, long postId, String message, boolean isRead) {

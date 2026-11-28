@@ -8,6 +8,7 @@ public class User implements Serializable{
 	private String password; //비밀번호
 	private String nickname; //닉네임
 	
+	
 	//회원가입, 로그인 시 사용
 	public User(long userId, String loginId, String password, String nickname) {
 		this.userId = userId;

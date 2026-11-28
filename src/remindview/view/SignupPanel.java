@@ -27,6 +27,7 @@ public class SignupPanel extends JPanel implements SignupView{
 	 */
 	public SignupPanel() {
 		setLayout(null);
+		setBackground(Color.WHITE);
 		
 		JLabel titleLabel = new JLabel("회원가입");
 		titleLabel.setFont(new Font("굴림", Font.BOLD, 28));

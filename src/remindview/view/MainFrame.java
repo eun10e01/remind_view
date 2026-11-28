@@ -15,7 +15,13 @@ public class MainFrame extends JFrame {
 
     private LoginPanel loginPanel;
     private SignupPanel signupPanel;
-
+    private MainRecordPanel mainRecordPanel;
+    private RecordFormPanel recordFormPanel;
+    private RecordDetailPanel recordDetailPanel;
+    private MyPagePanel myPagePanel;
+    private NotificationPanel notificationPanel;
+    private UserProfilePanel userProfilePanel;
+    
     public MainFrame() {
         // 1. 바깥 창 설정
         setTitle("리마인드 뷰");
@@ -25,16 +31,27 @@ public class MainFrame extends JFrame {
         cardLayout = new CardLayout();
         screenPanel = new JPanel(cardLayout);
 
-        // 네가 보내준 컴포넌트 배치를 담을 수 있는 크기
         screenPanel.setPreferredSize(new Dimension(700,550));
 
         // 3. 이미 디자인한 패널 생성
         loginPanel = new LoginPanel();
         signupPanel = new SignupPanel();
+        mainRecordPanel = new MainRecordPanel();
+        recordFormPanel = new RecordFormPanel();
+        recordDetailPanel = new RecordDetailPanel();
+        myPagePanel = new MyPagePanel();
+        userProfilePanel = new UserProfilePanel();
+        notificationPanel = new NotificationPanel();
 
         // 4. 화면에 이름을 붙여 등록
         screenPanel.add(loginPanel, "LOGIN");
         screenPanel.add(signupPanel, "SIGNUP");
+        screenPanel.add(mainRecordPanel, "MAIN_RECORD");
+        screenPanel.add(recordFormPanel, "RECORD_FORM");
+        screenPanel.add(recordDetailPanel, "RECORD_DETAIL");
+        screenPanel.add(myPagePanel, "MYPAGE");
+        screenPanel.add(userProfilePanel, "USER_PROFILE");
+        screenPanel.add(notificationPanel, "NOTIFICATION");
 
         // 5. 패널들을 담은 공간을 창의 내용으로 설정
         setContentPane(screenPanel);
@@ -56,6 +73,30 @@ public class MainFrame extends JFrame {
     public void showSignup() {
         cardLayout.show(screenPanel, "SIGNUP");
     }
+    
+   public void showMain() {
+	   cardLayout.show(screenPanel, "MAIN_RECORD");
+   }
+
+   public void showRecordForm() {
+	   cardLayout.show(screenPanel, "RECORD_FORM");
+   }
+
+   public void showRecordDetail() {
+	   cardLayout.show(screenPanel, "RECORD_DETAIL");
+   }
+
+   public void showMyPage() {
+	   cardLayout.show(screenPanel, "MYPAGE");
+   }
+
+   public void showUserProfile() {
+	   cardLayout.show(screenPanel, "USER_PROFILE");
+   }
+
+   public void showNotification() {
+	   cardLayout.show(screenPanel, "NOTIFICATION");
+   }
 
     // Controller가 각 패널에 접근할 수 있도록 제공
     public LoginPanel getLoginPanel() {
@@ -65,4 +106,6 @@ public class MainFrame extends JFrame {
     public SignupPanel getSignupPanel() {
         return signupPanel;
     }
+    
+    
 }

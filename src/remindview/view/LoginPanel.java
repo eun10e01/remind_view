@@ -24,6 +24,7 @@ public class LoginPanel extends JPanel implements LoginView {
 	 */
 	public LoginPanel() {
 		setLayout(null);
+		setBackground(Color.WHITE);
 		
 		JLabel titleLabel = new JLabel("리마인드 뷰");
 		titleLabel.setFont(new Font("굴림", Font.BOLD, 28));

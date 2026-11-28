@@ -29,6 +29,7 @@ public class ContentRecord implements Serializable{
 	public ContentRecord(long recordId, long userId, String youtubeUrl, String title, String content, boolean isShared, LocalDateTime createdAt, LocalDateTime updatedAt) {
 		this.recordId = recordId;
 		this.userId = userId;
+		this.youtubeUrl = youtubeUrl;
 		this.title = title;
 		this.content = content;
 		this.isShared = isShared;
